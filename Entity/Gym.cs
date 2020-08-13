@@ -4,12 +4,10 @@ using System.Text;
 
 namespace EF_HomeWork_4_CORE.Entity
 {
-    class Gym
+    public class Gym
     {
         public string Title { get; set; }
 
         public int TrainingPeolpeCount { get; set; }
-
-        public List<Coach> Coaches { get; set; }
     }
 }
