@@ -12,6 +12,11 @@ namespace EF_HomeWork_4_CORE
 
         public DbSet<Gym> Gyms { get; set; }
         
+        public GymDbContext()
+        {
+            Database.EnsureCreated();
+        }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
             var connectingString = @"Data Source=(localdb)\MSSSQLLocalDB; Initial Catalog=GymDb; Integrated Security=True";
