@@ -9,7 +9,14 @@ namespace EF_HomeWork_4_CORE
             using (var context = new GymDbContext())
             {
                 context.Database.EnsureCreated();
+            
+                
+            
             }
+            
+            
+
+        
         }
     }
 }

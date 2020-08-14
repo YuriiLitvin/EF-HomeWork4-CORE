@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,12 @@ namespace EF_HomeWork_4_CORE
 {
     public abstract class Repository<T> : IRepository<T>
     {
-        public T Add(T entity)
+        private readonly T Entity;
+        public Repository(T entity) 
+        {
+            Entity = entity;
+        }
+    public T Add(T entity)
         {
             throw new NotImplementedException();
         }

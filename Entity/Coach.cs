@@ -21,5 +21,7 @@ namespace EF_HomeWork_4_CORE.Entity
             Aerobics,
             PowerLifting
         }
+        
+        public Specialization Specializations { get; set; }
     }
 }

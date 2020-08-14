@@ -39,7 +39,12 @@ namespace EF_HomeWork_4_CORE
             modelBuilder.Entity<Coach>()
                     .Property(p => p.MobileNumber)
                     .IsRequired();
-            
+
+            modelBuilder.Entity<Coach>()
+                    .Property(p => p.Specializations)
+                    .HasConversion<int>();
+
+
             modelBuilder.Entity<Gym>()
                     .Property(g => g.Title)
                     .HasMaxLength(255);
@@ -47,6 +52,7 @@ namespace EF_HomeWork_4_CORE
             modelBuilder.Entity<Gym>()
                     .Property(g => g.Title)
                     .IsRequired();
+
 
         }
     }
