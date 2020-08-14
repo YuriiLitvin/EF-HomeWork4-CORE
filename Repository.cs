@@ -7,10 +7,10 @@ namespace EF_HomeWork_4_CORE
 {
     public abstract class Repository<T> : IRepository<T>
     {
-        private readonly T Entity;
-        public Repository(T entity) 
+        private readonly DbContext Context;
+        public Repository(DbContext context) 
         {
-            Entity = entity;
+            Context = context;
         }
     public T Add(T entity)
         {

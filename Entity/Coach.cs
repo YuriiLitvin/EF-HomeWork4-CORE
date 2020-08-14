@@ -18,7 +18,7 @@ namespace EF_HomeWork_4_CORE.Entity
         { 
             Dance,
             Yoga, 
-            Aerobics,
+            Fitness,
             PowerLifting
         }
         
