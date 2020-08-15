@@ -5,16 +5,22 @@ using System.Text;
 
 namespace EF_HomeWork_4_CORE
 {
-    public abstract class Repository<T> : IRepository<T>
+    public abstract class Repository<T> : IRepository<T> where T : class
     {
-        private readonly DbContext Context;
+        private DbContext Context;
+
+        public DbSet<T> Something { get; set; }
         public Repository(DbContext context) 
         {
             Context = context;
+            DbSet<T> something = Context.Set<T>();
+            Something = something;
         }
-    public T Add(T entity)
+
+        public T Add(T entity)
         {
-            throw new NotImplementedException();
+            Something.Add(entity);
+	        return entity;
         }
 
         public void Delete(int entityId)
