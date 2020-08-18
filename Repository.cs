@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace EF_HomeWork_4_CORE
@@ -25,12 +26,14 @@ namespace EF_HomeWork_4_CORE
 
         public void Delete(int entityId)
         {
-            throw new NotImplementedException();
+            var unit = DbSet.FirstOrDefault(u => u.Id == entityId);
+            DbSet.Remove(unit);
         }
 
         public IEnumerable<T> Get()
         {
-            throw new NotImplementedException();
+            var collection = DbSet.ToList();
+            return collection;
         }
 
         public void Update(T entity)

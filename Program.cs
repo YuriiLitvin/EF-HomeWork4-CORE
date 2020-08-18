@@ -21,6 +21,8 @@ namespace EF_HomeWork_4_CORE
                 //context.Gyms.Add(gym1);
                 //context.Gyms.Add(gym2);
                 context.SaveChanges();
+            
+                
             }
         }
     }
