@@ -9,17 +9,17 @@ namespace EF_HomeWork_4_CORE
     {
         private DbContext Context;
 
-        public DbSet<T> Something { get; set; }
+        private DbSet<T> DbSet { get; set; }
         public Repository(DbContext context) 
         {
             Context = context;
-            DbSet<T> something = Context.Set<T>();
-            Something = something;
+            DbSet<T> dbSet = Context.Set<T>();
+            DbSet = dbSet;
         }
 
         public T Add(T entity)
         {
-            Something.Add(entity);
+            DbSet.Add(entity);
 	        return entity;
         }
 

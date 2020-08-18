@@ -8,21 +8,20 @@ namespace EF_HomeWork_4_CORE
     {
         static void Main(string[] args)
         {
-            using (var context = new GymDbContext())
+            using (var context = new FitnessDbContext())
             {
                 var gym1 = new Gym { Title = "F1", TrainingPeolpeCount = 30 };
                 var gym2 = new Gym { Title = "SportLife", TrainingPeolpeCount = 150 };
 
                 var GymRepo = new GymRepository(context);
-                GymRepo.Something.Add(gym1);
-                GymRepo.Something.Add(gym2);
+                GymRepo.Add(gym1);
+                GymRepo.Add(gym2);
+                
+                
+                //context.Gyms.Add(gym1);
+                //context.Gyms.Add(gym2);
                 context.SaveChanges();
-            
             }
-
-
-
-
         }
     }
 }

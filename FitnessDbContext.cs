@@ -6,20 +6,23 @@ using System.Text;
 
 namespace EF_HomeWork_4_CORE
 {
-    public class GymDbContext : DbContext
+    public class FitnessDbContext : DbContext
     {
-        public DbSet<Coach> Coaches { get; set; }
+        public  DbSet<Coach> Coaches { get; set; }
 
         public DbSet<Gym> Gyms { get; set; }
         
-        public GymDbContext()
+        public FitnessDbContext()
         {
             Database.EnsureCreated();
         }
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
-            var connectingString = @"Data Source=(localdb)\ProjectsV13; Initial Catalog=GymDb; Integrated Security=True";
+            var connectingString = @"Data Source=(localdb)\ProjectsV13; 
+                                     Initial Catalog=FitnessDb; 
+                                     Integrated Security=True";
+            
             optionsBuilder.UseSqlServer(connectingString);
         }
         
