@@ -6,7 +6,7 @@ using System.Text;
 
 namespace EF_HomeWork_4_CORE
 {
-    public abstract class Repository<T> : IRepository<T> where T : class
+    public abstract class Repository<T> : IRepository<T> where T : IdClass
     {
         private DbContext Context;
 
@@ -38,7 +38,7 @@ namespace EF_HomeWork_4_CORE
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            Context.SaveChanges();
         }
     }
 }

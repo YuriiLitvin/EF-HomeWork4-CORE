@@ -4,9 +4,9 @@ using System.Text;
 
 namespace EF_HomeWork_4_CORE.Entity
 {
-    public class Gym
+    public class Gym : IdClass
     {
-        public int Id { get; set; }
+        public new int Id { get; set; }
 
         public string Title { get; set; }
 

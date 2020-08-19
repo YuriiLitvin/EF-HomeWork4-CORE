@@ -1,6 +1,7 @@
 ﻿using EF_HomeWork_4_CORE.Entity;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 
 namespace EF_HomeWork_4_CORE
 {
@@ -14,13 +15,15 @@ namespace EF_HomeWork_4_CORE
                 var gym2 = new Gym { Title = "SportLife", TrainingPeolpeCount = 150 };
 
                 var GymRepo = new GymRepository(context);
-                GymRepo.Add(gym1);
-                GymRepo.Add(gym2);
+                //GymRepo.Add(gym1);
+                //GymRepo.Add(gym2);
+                var gymCollection = GymRepo.Get();
+
+                var gymToUpdate = gymCollection.FirstOrDefault(g => g.Id == 2);
+                gymToUpdate.TrainingPeolpeCount = 200;
                 
-                
-                //context.Gyms.Add(gym1);
-                //context.Gyms.Add(gym2);
-                context.SaveChanges();
+                GymRepo.Update(gymToUpdate);
+                //GymRepo.Delete(1);
             
                 
             }
