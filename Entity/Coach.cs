@@ -4,9 +4,9 @@ using System.Text;
 
 namespace EF_HomeWork_4_CORE.Entity
 {
-    public class Coach : IdClass
+    public class Coach : BaseEntity
     {
-        public new int Id { get; set; }
+        //public new int Id { get; set; }
 
         public string  FullName { get; set; }
         
@@ -14,14 +14,9 @@ namespace EF_HomeWork_4_CORE.Entity
         
         public string  MobileNumber { get; set; }
         
-        public enum Specialization 
-        { 
-            Dance,
-            Yoga, 
-            Fitness,
-            PowerLifting
-        }
+        public TypeOfTraining Trainings { get; set; }
         
-        public Specialization Specializations { get; set; }
+        public Workout Workout { get; set; }
+
     }
 }

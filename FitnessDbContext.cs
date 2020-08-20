@@ -11,6 +11,8 @@ namespace EF_HomeWork_4_CORE
         public  DbSet<Coach> Coaches { get; set; }
 
         public DbSet<Gym> Gyms { get; set; }
+
+        public DbSet<Workout> Workouts { get; set; }
         
         public FitnessDbContext()
         {
@@ -41,17 +43,22 @@ namespace EF_HomeWork_4_CORE
                 .HasMaxLength(255);
 
             modelBuilder.Entity<Coach>()
+                    .Property(p => p.Trainings)
+                    .HasConversion<int>();
+
+            modelBuilder.Entity<Coach>()
                     .Property(p => p.FullName)
                     .IsRequired();
+
+            modelBuilder.Entity<Coach>()
+                   .Property(p => p.Email)
+                   .IsRequired(); 
 
             modelBuilder.Entity<Coach>()
                     .Property(p => p.MobileNumber)
                     .IsRequired();
 
-            modelBuilder.Entity<Coach>()
-                    .Property(p => p.Specializations)
-                    .HasConversion<int>();
-
+            
 
             modelBuilder.Entity<Gym>()
                     .Property(g => g.Title)
@@ -60,8 +67,36 @@ namespace EF_HomeWork_4_CORE
             modelBuilder.Entity<Gym>()
                     .Property(g => g.Title)
                     .IsRequired();
+            
+            modelBuilder.Entity<Gym>()
+                   .Property(g => g.TrainingPeolpeCount)
+                   .IsRequired();
 
 
+
+            modelBuilder.Entity<Workout>()
+                    .Property(w => w.Trainings)
+                    .HasConversion<int>();
+            
+            modelBuilder.Entity<Workout>()
+                   .Property(w => w.Trainings)
+                   .IsRequired();
+
+            modelBuilder.Entity<Workout>()
+                       .Property(w => w.Coach)
+                       .IsRequired();
+            
+            modelBuilder.Entity<Workout>()
+                   .Property(w => w.Gym)
+                   .IsRequired();
+
+            modelBuilder.Entity<Workout>()
+                   .Property(w => w.StartTime)
+                   .IsRequired();
+            
+            modelBuilder.Entity<Workout>()
+                       .Property(w => w.FinishTime)
+                       .IsRequired();
         }
     }
 }

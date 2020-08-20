@@ -6,7 +6,7 @@ using System.Text;
 
 namespace EF_HomeWork_4_CORE
 {
-    public abstract class Repository<T> : IRepository<T> where T : IdClass
+    public abstract class Repository<T> : IRepository<T> where T : BaseEntity
     {
         private DbContext Context;
 

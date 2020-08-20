@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EF_HomeWork_4_CORE
 {
-    public class IdClass 
+    public abstract class BaseEntity 
     {
         public int Id { get; set; }
     }
