@@ -8,10 +8,10 @@ namespace EF_HomeWork_4_CORE.Entity
     {
         //public new int Id { get; set; }
         
-        public TypeOfTraining Trainings { get; set; }
+        public TypeOfTraining TypeOfTraining { get; set; }
 
-        public Coach Coach { get; set; }
-        public Gym Gym { get; set; }
+        public int CoachId { get; set; }
+        public int GymId { get; set; }
 
         public int StartTime { get; set; }
         public int FinishTime { get; set; }

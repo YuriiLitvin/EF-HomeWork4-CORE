@@ -12,6 +12,6 @@ namespace EF_HomeWork_4_CORE.Entity
 
         public int TrainingPeolpeCount { get; set; }
     
-        public Workout Workout { get; set; }
+        public List<Workout> Workouts { get; set; }
     }
 }

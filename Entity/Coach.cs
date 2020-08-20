@@ -14,9 +14,9 @@ namespace EF_HomeWork_4_CORE.Entity
         
         public string  MobileNumber { get; set; }
         
-        public TypeOfTraining Trainings { get; set; }
+        public TypeOfTraining TypeOfTraining { get; set; }
         
-        public Workout Workout { get; set; }
+        public List<Workout> Workouts { get; set; }
 
     }
 }

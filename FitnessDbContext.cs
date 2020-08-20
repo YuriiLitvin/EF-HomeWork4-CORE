@@ -43,7 +43,7 @@ namespace EF_HomeWork_4_CORE
                 .HasMaxLength(255);
 
             modelBuilder.Entity<Coach>()
-                    .Property(p => p.Trainings)
+                    .Property(p => p.TypeOfTraining)
                     .HasConversion<int>();
 
             modelBuilder.Entity<Coach>()
@@ -75,19 +75,19 @@ namespace EF_HomeWork_4_CORE
 
 
             modelBuilder.Entity<Workout>()
-                    .Property(w => w.Trainings)
+                    .Property(w => w.TypeOfTraining)
                     .HasConversion<int>();
             
             modelBuilder.Entity<Workout>()
-                   .Property(w => w.Trainings)
+                   .Property(w => w.TypeOfTraining)
                    .IsRequired();
 
             modelBuilder.Entity<Workout>()
-                       .Property(w => w.Coach)
+                       .Property(w => w.CoachId)
                        .IsRequired();
             
             modelBuilder.Entity<Workout>()
-                   .Property(w => w.Gym)
+                   .Property(w => w.GymId)
                    .IsRequired();
 
             modelBuilder.Entity<Workout>()
