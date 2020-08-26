@@ -6,8 +6,6 @@ namespace EF_HomeWork_4_CORE.Entity
 {
     public class Coach : BaseEntity
     {
-        //public new int Id { get; set; }
-
         public string  FullName { get; set; }
         
         public string  Email { get; set; }

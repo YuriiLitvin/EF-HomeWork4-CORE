@@ -21,7 +21,7 @@ namespace EF_HomeWork_4_CORE
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
-            var connectingString = @"Data Source=(localdb)\ProjectsV13; 
+            var connectingString = @"Data Source=(localdb)\MSSQLLocalDB; 
                                      Initial Catalog=FitnessDb; 
                                      Integrated Security=True";
             
@@ -57,8 +57,11 @@ namespace EF_HomeWork_4_CORE
             modelBuilder.Entity<Coach>()
                     .Property(p => p.MobileNumber)
                     .IsRequired();
-
             
+            modelBuilder.Entity<Coach>()
+                    .HasMany(p => p.Workouts)
+                    .WithOne(w => w.Coach);
+
 
             modelBuilder.Entity<Gym>()
                     .Property(g => g.Title)
@@ -72,6 +75,9 @@ namespace EF_HomeWork_4_CORE
                    .Property(g => g.TrainingPeolpeCount)
                    .IsRequired();
 
+            modelBuilder.Entity<Gym>()
+                    .HasMany(p => p.Workouts)
+                    .WithOne(w => w.Gym);
 
 
             modelBuilder.Entity<Workout>()
@@ -83,17 +89,9 @@ namespace EF_HomeWork_4_CORE
                    .IsRequired();
 
             modelBuilder.Entity<Workout>()
-                       .Property(w => w.CoachId)
-                       .IsRequired();
-            
-            modelBuilder.Entity<Workout>()
-                   .Property(w => w.GymId)
-                   .IsRequired();
-
-            modelBuilder.Entity<Workout>()
                    .Property(w => w.StartTime)
                    .IsRequired();
-            
+
             modelBuilder.Entity<Workout>()
                        .Property(w => w.FinishTime)
                        .IsRequired();

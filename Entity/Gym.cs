@@ -6,7 +6,6 @@ namespace EF_HomeWork_4_CORE.Entity
 {
     public class Gym : BaseEntity
     {
-        //public new int Id { get; set; }
 
         public string Title { get; set; }
 
