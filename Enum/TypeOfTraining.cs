@@ -6,7 +6,7 @@ namespace EF_HomeWork_4_CORE
 {
     public enum TypeOfTraining
     {
-        Dance,
+        Dances,
         Yoga,
         Fitness,
         PowerLifting

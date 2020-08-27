@@ -16,6 +16,7 @@ namespace EF_HomeWork_4_CORE
         
         public FitnessDbContext()
         {
+            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         
@@ -58,11 +59,17 @@ namespace EF_HomeWork_4_CORE
                     .Property(p => p.MobileNumber)
                     .IsRequired();
             
-            modelBuilder.Entity<Coach>()
-                    .HasMany(p => p.Workouts)
-                    .WithOne(w => w.Coach);
+            
+            
+            
+            //modelBuilder.Entity<Coach>()
+            //        .HasMany(p => p.Workouts)
+            //        .WithOne(w => w.Coach);
 
 
+            
+            
+            
             modelBuilder.Entity<Gym>()
                     .Property(g => g.Title)
                     .HasMaxLength(255);
@@ -75,14 +82,30 @@ namespace EF_HomeWork_4_CORE
                    .Property(g => g.TrainingPeolpeCount)
                    .IsRequired();
 
-            modelBuilder.Entity<Gym>()
-                    .HasMany(p => p.Workouts)
-                    .WithOne(w => w.Gym);
+            
+            
+            
+            //modelBuilder.Entity<Gym>()
+            //        .HasMany(p => p.Workouts)
+            //        .WithOne(w => w.Gym);
 
 
+            
+            
+            
+            
             modelBuilder.Entity<Workout>()
                     .Property(w => w.TypeOfTraining)
                     .HasConversion<int>();
+            
+            
+            modelBuilder.Entity<Workout>()
+                   .Property(w => w.CoachId)
+                   .IsRequired();
+            
+            modelBuilder.Entity<Workout>()
+                   .Property(w => w.GymId)
+                   .IsRequired();
             
             modelBuilder.Entity<Workout>()
                    .Property(w => w.TypeOfTraining)
@@ -95,6 +118,13 @@ namespace EF_HomeWork_4_CORE
             modelBuilder.Entity<Workout>()
                        .Property(w => w.FinishTime)
                        .IsRequired();
+
+            modelBuilder.Entity<Workout>()
+                        .HasOne(p => p.Coach);
+            
+            modelBuilder.Entity<Workout>()
+                        .HasOne(p => p.Gym);
+
         }
     }
 }

@@ -14,7 +14,7 @@ namespace EF_HomeWork_4_CORE.Entity
         
         public TypeOfTraining TypeOfTraining { get; set; }
         
-        public List<Workout> Workouts { get; set; }
+        //public List<Workout> Workouts { get; set; }
 
     }
 }
