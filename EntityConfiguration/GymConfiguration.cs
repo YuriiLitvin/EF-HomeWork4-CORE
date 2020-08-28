@@ -1,9 +1,7 @@
 ﻿using EF_HomeWork_4_CORE.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace EF_HomeWork_4_CORE.EntityConfiguration
 {
@@ -16,6 +14,8 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
             builder.Property(g => g.Title).IsRequired();
 
             builder.Property(g => g.TrainingPeolpeCount).IsRequired();
+
+            builder.HasData(new { Id = 1, Title = "Sparta", TrainingPeolpeCount = 100 });
         }
     }
 }

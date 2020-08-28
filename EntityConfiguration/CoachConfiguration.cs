@@ -1,9 +1,7 @@
 ﻿using EF_HomeWork_4_CORE.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace EF_HomeWork_4_CORE.EntityConfiguration
 {
@@ -24,6 +22,16 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
             builder.Property(p => p.Email).IsRequired();
 
             builder.Property(p => p.MobileNumber).IsRequired();
+
+            builder.HasData(new {
+                Id = 1,
+                FullName = "Petrovich",
+                Email = "petrovich@gmail.com",
+                MobileNumber = "09923",
+                TypeOfTraining = TypeOfTraining.Yoga
+            });
+        
+        
         }
     }
 }

@@ -17,7 +17,6 @@ namespace EF_HomeWork_4_CORE
         
         public FitnessDbContext()
         {
-            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         

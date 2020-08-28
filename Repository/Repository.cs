@@ -8,13 +8,11 @@ namespace EF_HomeWork_4_CORE
 {
     public abstract class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        private DbContext Context;
 
         private DbSet<T> DbSet { get; set; }
         public Repository(DbContext context) 
         {
-            Context = context;
-            DbSet<T> dbSet = Context.Set<T>();
+            DbSet<T> dbSet = context.Set<T>();
             DbSet = dbSet;
         }
 
@@ -32,13 +30,12 @@ namespace EF_HomeWork_4_CORE
 
         public IEnumerable<T> Get()
         {
-            var collection = DbSet.ToList();
-            return collection;
+            return DbSet;
         }
 
         public void Update(T entity)
         {
-            Context.SaveChanges();
+            DbSet.Update(entity);
         }
     }
 }

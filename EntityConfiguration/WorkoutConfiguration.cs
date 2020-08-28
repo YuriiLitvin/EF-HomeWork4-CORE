@@ -2,8 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace EF_HomeWork_4_CORE.EntityConfiguration
 {
@@ -13,7 +11,6 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
         {
 
             builder.Property(w => w.TypeOfTraining).HasConversion<int>();
-
 
             builder.Property(w => w.CoachId).IsRequired();
 
@@ -29,6 +26,14 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
             
             builder.HasOne(p => p.Gym);
 
+            builder.HasData(new {
+                Id = 1,
+                TypeOfTraining = TypeOfTraining.Yoga,
+                CoachId = 1,
+                GymId = 1,
+                StartTime = new DateTime(2020, 08, 27, 09, 00, 00),
+                FinishTime = new DateTime(2020, 08, 27, 10, 00, 00)
+            });
         }
     }
 }
