@@ -9,33 +9,33 @@ namespace EF_HomeWork_4_CORE
     public abstract class Repository<T> : IRepository<T> where T : BaseEntity
     {
 
-        private DbSet<T> DbSet { get; set; }
+        private readonly DbSet<T> _dbSet;
         public Repository(DbContext context) 
         {
-            DbSet<T> dbSet = context.Set<T>();
-            DbSet = dbSet;
+            DbSet<T> set = context.Set<T>();
+            _dbSet = set;
         }
 
         public T Add(T entity)
         {
-            DbSet.Add(entity);
+            _dbSet.Add(entity);
 	        return entity;
         }
 
         public void Delete(int entityId)
         {
-            var unit = DbSet.FirstOrDefault(u => u.Id == entityId);
-            DbSet.Remove(unit);
+            var unit = _dbSet.FirstOrDefault(u => u.Id == entityId);
+            _dbSet.Remove(unit);
         }
 
         public IEnumerable<T> Get()
         {
-            return DbSet;
+            return _dbSet;
         }
 
         public void Update(T entity)
         {
-            DbSet.Update(entity);
+            _dbSet.Update(entity);
         }
     }
 }

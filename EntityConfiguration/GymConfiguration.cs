@@ -16,6 +16,9 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
             builder.Property(g => g.TrainingPeolpeCount).IsRequired();
 
             builder.HasData(new { Id = 1, Title = "Sparta", TrainingPeolpeCount = 100 });
+
+            builder.HasData (new { Id = 2, Title = "FitnessLife", TrainingPeolpeCount = 150 });
+
         }
     }
 }

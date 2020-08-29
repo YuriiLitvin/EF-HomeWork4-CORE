@@ -29,11 +29,39 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
             builder.HasData(new {
                 Id = 1,
                 TypeOfTraining = TypeOfTraining.Yoga,
-                CoachId = 1,
+                CoachId = 4,
                 GymId = 1,
                 StartTime = new DateTime(2020, 08, 27, 09, 00, 00),
                 FinishTime = new DateTime(2020, 08, 27, 10, 00, 00)
             });
+
+            builder.HasData(new {
+                Id = 2,
+                TypeOfTraining = TypeOfTraining.Fitness,
+                CoachId = 2,
+                GymId = 2,
+                StartTime = new DateTime(2020, 08, 27, 10, 00, 00),
+                FinishTime = new DateTime(2020, 08, 27, 11, 00, 00)
+            });
+            
+            builder.HasData(new {
+                Id = 3,
+                TypeOfTraining = TypeOfTraining.PowerLifting,
+                CoachId = 3,
+                GymId = 1,
+                StartTime = new DateTime(2020, 08, 27, 11, 00, 00),
+                FinishTime = new DateTime(2020, 08, 27, 12, 00, 00)
+            });
+            
+            builder.HasData(new {
+                Id = 4,
+                TypeOfTraining = TypeOfTraining.Dances,
+                CoachId = 1,
+                GymId = 2,
+                StartTime = new DateTime(2020, 08, 27, 12, 00, 00),
+                FinishTime = new DateTime(2020, 08, 27, 13, 00, 00)
+            });
+
         }
     }
 }

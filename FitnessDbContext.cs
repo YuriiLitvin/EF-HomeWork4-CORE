@@ -35,32 +35,6 @@ namespace EF_HomeWork_4_CORE
             modelBuilder.ApplyConfiguration(new GymConfiguration());
             modelBuilder.ApplyConfiguration(new WorkoutConfiguration());
 
-
-
-           
-            
-            
-            
-            
-            //modelBuilder.Entity<Coach>()
-            //        .HasMany(p => p.Workouts)
-            //        .WithOne(w => w.Coach);
-
-
-            
-
-            
-            
-            
-            //modelBuilder.Entity<Gym>()
-            //        .HasMany(p => p.Workouts)
-            //        .WithOne(w => w.Gym);
-
-
-            
-            
-            
-           
         }
     }
 }
