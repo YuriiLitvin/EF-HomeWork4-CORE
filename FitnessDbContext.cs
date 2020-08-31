@@ -22,7 +22,7 @@ namespace EF_HomeWork_4_CORE
         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
-            var connectingString = @"Data Source=(localdb)\MSSQLLocalDB; 
+            var connectingString = @"Data Source=DESKTOP-S7BNTGV; 
                                      Initial Catalog=FitnessDb; 
                                      Integrated Security=True";
             
