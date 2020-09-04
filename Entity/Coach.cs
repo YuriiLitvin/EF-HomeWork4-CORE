@@ -6,7 +6,9 @@ namespace EF_HomeWork_4_CORE.Entity
 {
     public class Coach : BaseEntity
     {
-        public string  FullName { get; set; }
+        public string  FirstName { get; set; }
+        
+        public string  LastName { get; set; }
         
         public string  Email { get; set; }
         

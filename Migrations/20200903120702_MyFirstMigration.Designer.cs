@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_HomeWork_4_CORE.Migrations
 {
     [DbContext(typeof(FitnessDbContext))]
-    [Migration("20200831114829_MyFirstMigration")]
+    [Migration("20200903120702_MyFirstMigration")]
     partial class MyFirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

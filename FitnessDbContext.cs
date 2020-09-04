@@ -14,12 +14,12 @@ namespace EF_HomeWork_4_CORE
         public DbSet<Gym> Gyms { get; set; }
 
         public DbSet<Workout> Workouts { get; set; }
-        
-        public FitnessDbContext()
-        {
-            Database.EnsureCreated();
-        }
-        
+
+        //public FitnessDbContext()
+        //{
+        //    //Database.EnsureCreated();
+        //}
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
             var connectingString = @"Data Source=DESKTOP-S7BNTGV; 

@@ -12,6 +12,7 @@ namespace EF_HomeWork_4_CORE
         static void Main(string[] args)
         {
             using var context = new FitnessDbContext();
+            context.Database.EnsureCreated();
         }
     }
 }

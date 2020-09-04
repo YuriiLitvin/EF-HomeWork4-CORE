@@ -9,23 +9,21 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Coach> builder)
         {
-            builder.Property(p => p.FullName).HasMaxLength(255);
+            builder.Property(p => p.FirstName).HasMaxLength(255).IsRequired();
+            
+            builder.Property(p => p.LastName).HasMaxLength(255).IsRequired();
 
-            builder.Property(p => p.MobileNumber).HasMaxLength(255);
+            builder.Property(p => p.MobileNumber).HasMaxLength(255).IsRequired();
 
-            builder.Property(p => p.Email).HasMaxLength(255);
+            builder.Property(p => p.Email).HasMaxLength(255).IsRequired();
 
             builder.Property(p => p.TypeOfTraining).HasConversion<int>();
 
-            builder.Property(p => p.FullName).IsRequired();
-
-            builder.Property(p => p.Email).IsRequired();
-
-            builder.Property(p => p.MobileNumber).IsRequired();
 
             builder.HasData(new {
                 Id = 1,
-                FullName = "Petrovich",
+                FirstName = "Petrovich",
+                LastName = "",
                 Email = "petrovich@gmail.com",
                 MobileNumber = "09923",
                 TypeOfTraining = TypeOfTraining.Dances
@@ -33,7 +31,8 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
 
             builder.HasData(new {
                 Id = 2,
-                FullName = "Samson",
+                FirstName = "Samson",
+                LastName = "",
                 Email = "samson@gmail.com",
                 MobileNumber = "097325",
                 TypeOfTraining = TypeOfTraining.Fitness
@@ -41,7 +40,8 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
             
             builder.HasData (new {
                 Id = 3,
-                FullName = "Oleksandr I",
+                FirstName = "Oleksandr",
+                LastName = "I",
                 Email = "sashkapower@gmail.com",
                 MobileNumber = "09544234",
                 TypeOfTraining = TypeOfTraining.PowerLifting
@@ -49,7 +49,8 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
             
             builder.HasData (new {
                 Id = 4,
-                FullName = "Anna G.",
+                FirstName = "Anna",
+                LastName = "G.",
                 Email = "g_anna@gmail.com",
                 MobileNumber = "0930954",
                 TypeOfTraining = TypeOfTraining.Yoga

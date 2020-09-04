@@ -9,9 +9,7 @@ namespace EF_HomeWork_4_CORE.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Gym> builder)
         {
-            builder.Property(g => g.Title).HasMaxLength(255);
-
-            builder.Property(g => g.Title).IsRequired();
+            builder.Property(g => g.Title).HasMaxLength(255).IsRequired();
 
             builder.Property(g => g.TrainingPeolpeCount).IsRequired();
 
